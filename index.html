@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andhra MilkHub</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+body{
+background:#f4f4f4;
+color:#333;
+transition:0.4s;
+}
+header{
+background:#009688;
+padding:15px;
+color:white;
+position:sticky;
+top:0;
+z-index:1000;
+}
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+nav ul{
+display:flex;
+list-style:none;
+gap:20px;
+}
+nav a{
+color:white;
+text-decoration:none;
+}
+#darkModeBtn{
+padding:8px 12px;
+border:none;
+cursor:pointer;
+border-radius:5px;
+}
+.hero{
+text-align:center;
+padding:80px 20px;
+background:#e0f7fa;
+}
+.hero button{
+padding:10px 20px;
+background:#009688;
+color:white;
+border:none;
+cursor:pointer;
+margin-top:10px;
+border-radius:5px;
+}
+section{
+padding:40px 20px;
+}
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:20px;
+}
+.card{
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:10px;
+}
+.plan-box{
+background:white;
+padding:20px;
+margin:15px 0;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+#searchBox,#orderId,#milkType{
+width:100%;
+padding:10px;
+margin:10px 0;
+border-radius:5px;
+border:1px solid #ccc;
+}
+.track-btn{
+padding:10px 20px;
+background:#009688;
+color:white;
+border:none;
+cursor:pointer;
+border-radius:5px;
+<section id="payment">
+<h2>Payment Options</h2>
+
+footer{
+background:#009688;
+color:white;
+text-align:center;
+padding:15px;
+}
+.dark{
+background:#121212;
+color:white;
+}
+.dark .card,
+.dark .plan-box{
+background:#1e1e1e;
+color:white;
+}
+.dark .hero{
+background:#222;
+}
+.dark input, .dark select{
+background:#333;
+color:white;
+border:1px solid #555;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<h1>🥛Andhra MilkHub</h1>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#milks">Milks</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#plans">Plans</a></li>
+<li><a href="#track">Track</a></li>
+<li><a href="payment">Payment</a></li>
+</ul>
+<button id="darkModeBtn">🌙</button>
+</nav>
+</header>
+
+<section id="home" class="hero">
+<h2>Fresh Milk Delivered Every Morning</h2>
+<p>Farm Fresh Milk & Dairy Products at Your Doorstep.</p>
+<button>Subscribe Now</button>
+</section>
+
+<section id="milks">
+<h2>All Milk Types</h2>
+<div class="products">
+<div class="card"><img src="https://img.freepik.com/premium-photo/cows-milk-with-dairy-cow-background_889227-31601.jpg"><h3>Cow Milk</h3><p>₹55 / Litre</p></div>
+<div class="card"><img src="https://tse2.mm.bing.net/th/id/OIP.QJy3Hc3WxHhRsw_L4KM_eQHaEO"><h3>Buffalo Milk</h3><p>₹70 / Litre</p></div>
+<div class="card"><img src="https://purelywholesome.com/wp-content/uploads/2025/10/goat-milk-production-2-1.webp"><h3>Goat Milk</h3><p>₹85 / Litre</p></div>
+<div class="card"><img src="https://www.ukcamelmilk.co.uk/wp-content/uploads/2020/10/drinking-camel-milk.jpg"><h3>Camel Milk</h3><p>₹120 / Litre</p></div>
+<div class="card"><img src="https://tse2.mm.bing.net/th/id/OIP.oXTdR5QokQ2vceUdnXEgaAHaF7"><h3>Sheep Milk</h3><p>₹110 / Litre</p></div>
+<div class="card"><img src="https://tse3.mm.bing.net/th/id/OIP.eTRh6uZad1V5hAktp8bhNwHaE8"><h3>A2 Milk</h3><p>₹95 / Litre</p></div>
+</div>
+</section>
+
+<section id="products">
+<h2>Milk Products</h2>
+
+<label><b>Milk Type:</b></label>
+<select id="milkType">
+<option value="all">All</option>
+<option value="cow">🐄 Cow</option>
+<option value="buffalo">🐃 Buffalo</option>
+</select>
+
+<input type="text" id="searchBox" placeholder="Search Products...">
+
+<div class="products">
+
+<div class="card" data-type="cow">
+<img src="https://tse3.mm.bing.net/th/id/OIP.SZnxAAvfi__L5B0renmnSQHaFX">
+<h3>Curd</h3>
+<p>₹40</p>
+</div>
+
+<div class="card" data-type="buffalo">
+<img src="https://tse1.mm.bing.net/th/id/OIP.ECpmCsJWENCIYrBdi_sh9wHaEo?pid=Api&rs=1&c=1&qlt=95&h=180">
+<h3>Butter</h3>
+<p>₹60</p>
+</div>
+
+<div class="card" data-type="buffalo">
+<img src="https://tse1.mm.bing.net/th/id/OIP.agxY7V14F72ONjZPdj9XvAHaEK">
+<h3>Ghee</h3>
+<p>₹650/kg</p>
+</div>
+
+<div class="card" data-type="cow">
+<img src="https://www.shutterstock.com/image-photo/cheese-paneer-260nw-1096061969.jpg">
+<h3>Paneer</h3>
+<p>₹90</p>
+</div>
+
+<div class="card" data-type="cow">
+<img src="https://tse1.mm.bing.net/th/id/OIP.CBxl9mfhd3QkkTEd_VAL-wHaE8">
+<h3>Cheese</h3>
+<p>₹120</p>
+</div>
+
+<div class="card" data-type="buffalo">
+<img src="https://tse4.mm.bing.net/th/id/OIP.Molc8i6Kmhr3y7PLzoQkcwHaE7">
+<h3>Ice Cream</h3>
+<p>₹50</p>
+</div>
+
+<div class="card" data-type="cow">
+<img src="https://www.eatanmol.com/wp-content/uploads/Plain-Lassi.jpg">
+<h3>Lassi</h3>
+<p>₹30</p>
+</div>
+
+<div class="card" data-type="buffalo">
+<img src="https://tse3.mm.bing.net/th/id/OIP.NzJLBAs59fhgttBftMfcpQHaEJ">
+<h3>Milk Powder</h3>
+<p>₹280</p>
+</div>
+
+</div>
+</section>
+
+<section id="plans">
+<h2>Subscription Plans</h2>
+<div class="plan-box"><h3>Daily Plan</h3><p>Milk delivered every day.</p></div>
+<div class="plan-box"><h3>Alternate Day Plan</h3><p>Delivery on alternate days.</p></div>
+<div class="plan-box"><h3>Monthly Plan</h3><p>Best Value Subscription.</p></div>
+</section>
+
+<section id="track">
+<h2>Track Your Order</h2>
+<input type="text" id="orderId" placeholder="Enter Order ID">
+<button class="track-btn" onclick="trackOrder()">Track</button>
+<p id="status"></p>
+</section>
+<section id="payment">
+<h2>Payment Options</h2>
+
+<div class="plan-box">
+
+<h3>Select Payment Method</h3>
+
+<label>
+<input type="radio" name="payment" value="upi" checked>
+ UPI (PhonePe, Google Pay, Paytm, BHIM)
+</label>
+
+<br><br>
+
+<label>
+<input type="radio" name="payment" value="card">
+ Credit / Debit Card
+</label>
+
+<br><br>
+
+<label>
+<input type="radio" name="payment" value="netbanking">
+ Net Banking
+</label>
+
+<br><br>
+
+<label>
+<input type="radio" name="payment" value="wallet">
+ Wallet (Amazon Pay / Paytm Wallet)
+</label>
+
+<br><br>
+
+<label>
+<input type="radio" name="payment" value="cod">
+ Cash On Delivery (COD)
+</label>
+
+<br><br>
+
+<button class="track-btn" onclick="payNow()">Proceed To Pay</button>
+
+<p id="paymentStatus"></p>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 Andhra MilkHub</p>
+</footer>
+
+<script>
+const darkBtn = document.getElementById("darkModeBtn");
+darkBtn.addEventListener("click",()=>{
+  document.body.classList.toggle("dark");
+});
+
+const searchBox = document.getElementById("searchBox");
+const milkType = document.getElementById("milkType");
+
+function filterProducts(){
+  let filter = searchBox.value.toLowerCase();
+  let type = milkType.value;
+  let cards = document.querySelectorAll("#products .card");
+
+  cards.forEach(card=>{
+    let text = card.innerText.toLowerCase();
+    let cardType = card.getAttribute("data-type");
+    
+    let matchSearch = text.includes(filter);
+    let matchType = (type === "all" || cardType === type);
+    
+    card.style.display = (matchSearch && matchType) ? "block" : "none";
+  });
+}
+
+searchBox.addEventListener("keyup", filterProducts);
+milkType.addEventListener("change", filterProducts);
+
+function trackOrder(){
+  let id=document.getElementById("orderId").value;
+  let status=document.getElementById("status");
+  if(id===""){
+    status.innerHTML="Please Enter Order ID";
+  }else{
+    status.innerHTML="Order #"+id+" is Out For Delivery 🚚";
+  }
+}
+</script>
+
+</body>
+</html>
