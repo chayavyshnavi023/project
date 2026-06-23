@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andhra MilkHub</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Login Screen -->
+<div id="loginPage" class="login-container">
+    <div class="login-box">
+        <h2>🥛 Andhra MilkHub Login</h2>
+
+        <input type="email" id="email" placeholder="Enter Email">
+
+        <button onclick="sendOTP()">Send OTP</button>
+
+        <div id="otpSection" style="display:none;">
+            <input type="text" id="otp" placeholder="Enter OTP">
+            <button onclick="verifyOTP()">Verify OTP</button>
+            <p class="note">Demo OTP: 123456</p>
+        </div>
+
+        <p id="loginMsg"></p>
+    </div>
+</div>
+
+<!-- Main Website -->
+<div id="mainWebsite" style="display:none;">
+
+<header>
+    <nav>
+        <h1>🥛 Andhra MilkHub</h1>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#milks">Milks</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#cart">Cart</a></li>
+            <li><a href="#checkout">Checkout</a></li>
+            <li><a href="#track">Track</a></li>
+            <li><a href="#profile">Profile</a></li>
+        </ul>
+
+        <div>
+            <button id="darkModeBtn">🌙</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <h2>Fresh Milk Delivered Every Morning</h2>
+    <p>Farm Fresh Milk & Dairy Products at Your Doorstep.</p>
+</section>
+
+<section id="milks">
+    <h2>Milk Types</h2>
+
+    <div class="products">
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250x180?text=Cow+Milk">
+            <h3>Cow Milk</h3>
+            <p>₹55/L</p>
+            <button onclick="addToCart('Cow Milk',55)">Add To Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250x180?text=Buffalo+Milk">
+            <h3>Buffalo Milk</h3>
+            <p>₹70/L</p>
+            <button onclick="addToCart('Buffalo Milk',70)">Add To Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250x180?text=A2+Milk">
+            <h3>A2 Milk</h3>
+            <p>₹95/L</p>
+            <button onclick="addToCart('A2 Milk',95)">Add To Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="products">
+    <h2>Dairy Products</h2>
+
+    <input type="text" id="searchBox" placeholder="Search Products">
+
+    <div class="products">
+
+        <div class="card product-card">
+            <img src="https://via.placeholder.com/250x180?text=Curd">
+            <h3>Curd</h3>
+            <p>₹40</p>
+            <button onclick="addToCart('Curd',40)">Add To Cart</button>
+        </div>
+
+        <div class="card product-card">
+            <img src="https://via.placeholder.com/250x180?text=Butter">
+            <h3>Butter</h3>
+            <p>₹60</p>
+            <button onclick="addToCart('Butter',60)">Add To Cart</button>
+        </div>
+
+        <div class="card product-card">
+            <img src="https://via.placeholder.com/250x180?text=Paneer">
+            <h3>Paneer</h3>
+            <p>₹90</p>
+            <button onclick="addToCart('Paneer',90)">Add To Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="cart">
+    <h2>🛒 Cart</h2>
+
+    <div id="cartItems"></div>
+
+    <h3>Total: ₹<span id="cartTotal">0</span></h3>
+</section>
+
+<section id="checkout">
+    <h2>Checkout</h2>
+
+    <input type="text" id="customerName" placeholder="Full Name">
+
+    <input type="text" id="address" placeholder="Delivery Address">
+
+    <select id="paymentMethod">
+        <option>UPI</option>
+        <option>Card</option>
+        <option>Net Banking</option>
+        <option>Wallet</option>
+        <option>Cash On Delivery</option>
+    </select>
+
+    <button onclick="placeOrder()">Place Order</button>
+
+    <p id="orderMsg"></p>
+</section>
+
+<section id="track">
+    <h2>Track Order</h2>
+
+    <input type="text" id="orderId" placeholder="Order ID">
+
+    <button onclick="trackOrder()">Track</button>
+
+    <p id="trackStatus"></p>
+</section>
+
+<section id="profile">
+    <h2>User Profile</h2>
+
+    <div class="profile-box">
+        <p><strong>Email:</strong> <span id="userEmail"></span></p>
+        <p><strong>Status:</strong> Active User</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Andhra MilkHub</p>
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
